@@ -1,20 +1,24 @@
 <?php
 require 'Contacts.class.php';
 $contact = new Contacts();
+
+// New Contact
 $contact->add('davisilvaphoto@gmail.com', 'Davi Silva');
 $contact->add('teste@gmail.com');
 
+// Show a contact
 $email = 'davisilvaphoto@gmail.com';
 $name = $contact->getName($email);
 echo $name.'<br/>';
 
-$allContacts = $contact->getAll();
+// Show all contacts
 echo '<pre>';
-print_r($allContacts);
-echo '<br>';
+print_r($contact->getAll());
 
+// Edit contact
 $contact->edit('Testador', 'teste@gmail.com');
-$deleteContact = $contact->delete('teste2@gmail.com');
-$info = ($deleteContact) ? 'Dados Excluidos' : 'Dados Inválidos';
 
-echo $info;
+// Delete contact
+$deleteContact = $contact->delete('teste@gmail.com');
+
+echo ($deleteContact) ? 'Dados Excluidos' : 'Dados Inválidos';

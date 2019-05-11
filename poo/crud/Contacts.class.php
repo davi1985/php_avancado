@@ -16,6 +16,7 @@ class Contacts
         // using auxiliary method isThereEmail()
         if ($this->isThereEmail($email) == false) {
             $sql = 'INSERT INTO contacts (name, email) VALUES (:name, :email)';
+            // $name = filter_var($name, FILTER_SANITIZE_STRING);
             $sql = $this->pdo->prepare($sql);
             $sql->bindValue(':name', $name);
             $sql->bindValue(':email', $email);
@@ -71,10 +72,10 @@ class Contacts
     public function delete($email)
     {
         if ($this->isThereEmail($email)) {
-            $sql = 'DELETE FROM conctacts WHERE email = :email';
+            $sql = 'DELETE FROM contacts WHERE email = :email';
             $sql = $this->pdo->prepare($sql);
             $sql->bindValue(':email', $email);
-            $sql->execute;
+            $sql->execute();
 
             return true;
         } else {
