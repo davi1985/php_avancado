@@ -1,0 +1,18 @@
+body {
+  background-color: transparent;
+}
+table {
+  text-align: center;
+}
+.container {
+  margin-top: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24);
+}
+footer {
+  margin-top: 20px;
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(58, 58, 58);
+  color: white;
+}
