@@ -30,7 +30,7 @@
           <button type="submit">Verificar Resultado</button>
     </form>
     <h2 class="result">
-      <?php echo (result())? result() : '';?>
+      <?php echo (result())? result() : '0';?>
     </h2>
   </div>
 </body>
