@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <nav class="navbar navbar-light bg-primary">
-  <a class="navbar-brand" href="#" style="color: white;">CRUD Conctacts</a>
+  <h1 class="navbar-brand" href="#" style="color: white;">CRUD Conctacts</h1>
 </nav>
 
 <body>

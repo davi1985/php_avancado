@@ -15,6 +15,10 @@ if (!empty($_GET['id'])) {
 }
 ?>
 <div class="container">
+	<a href="index.php">
+		<i class="fas fa-angle-double-left"></i>
+		Voltar
+	</a>
 	<h2>Editar</h2>
 
 	<form action="app/edit.php" method="POST">
@@ -30,7 +34,7 @@ if (!empty($_GET['id'])) {
 			<input type="email" name="email" id="email" class="form-control"
 				value="<?php echo $info['email'];?>" />
 		</div>
-		<input type="submit" value="Atualizar" class="btn btn-outline-primary">
+		<input type="submit" value="Atualizar" class="btn btn-outline-primary btn-sm">
 	</form>
 
 </div>
