@@ -5,9 +5,16 @@
 class Contacts
 {
     private $pdo;
+    private $dsn = 'mysql:dbname=crud_poo;host=localhost';
+    private $dbUser = 'root';
+    private $dbpass = '';
     public function __construct()
     {
-        $this->pdo = new PDO('mysql:dbname=crud_poo;host=localhost', 'root', '');
+        $this->pdo = new PDO(
+            $this->$dsn,
+            $this->$dbUser,
+            $this->$dbpass
+        );
     }
 
     // Create
