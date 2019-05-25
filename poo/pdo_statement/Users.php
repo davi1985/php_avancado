@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class Users
+ * @author Davi Silva
+ */
 class Users
 {
     private $db;
@@ -9,10 +13,12 @@ class Users
         try {
             $this->db = new PDO('mysql:dbname=blog;host=localhost', 'root', '');
         } catch (PDOExeption $e) {
-            echo 'ERRO'.$e->getMessage();
+            echo 'ERRO:'.$e->getMessage();
         }
     }
-
+    /**
+    * @args $id
+    */
     public function select($id)
     {
         $sql = $this->db->prepare('SELECT * FROM users WHERE id = :id');
@@ -26,6 +32,9 @@ class Users
         return $data;
     }
 
+    /**
+     * @args $name, $email, $password, $id
+     */
     public function insertUser($name, $email, $password)
     {
         $sql = $this->db->prepare('INSERT INTO users SET name = :name, email = :email, password = :password ');
@@ -35,13 +44,18 @@ class Users
         $sql->execute();
     }
 
+    /**
+     * @args $name, $email, $password, $id
+     */
     public function updateUser($name, $email, $password, $id)
     {
         $sql = $this->db->prepare('UPDATE users SET name = ?, email = ?, password = ? WHERE id = ?');
         $sql->execute(array($name, $email, md5($password), $id));
     }
-
-    public function delete($id)
+    /**
+     * Without args
+     */
+    public function delete()
     {
         $sql = $this->db->prepare('DELETE FROM users WHERE id = ?');
         $sql->bindValue(1, $id);
